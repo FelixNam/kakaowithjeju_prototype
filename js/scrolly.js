@@ -4,6 +4,8 @@
 (function () {
   var $ = function (s) { return document.querySelector(s); };
   var $$ = function (s) { return Array.prototype.slice.call(document.querySelectorAll(s)); };
+  /* 모바일(≤768px)에선 가로 스크롤 갤러리·커스텀 스냅을 끄고 세로 스택으로 둔다 */
+  var isMobile = function () { return window.innerWidth <= 768; };
 
   var allowMotion = matchMedia('(prefers-reduced-motion: no-preference)').matches;
   if (allowMotion) document.body.classList.add('anim');
@@ -76,6 +78,7 @@
   function sizeHScroll() {
     hscrolls.forEach(function (h) {
       var track = h.querySelector('.hscroll-track');
+      if (isMobile()) { h.style.height = ''; track.style.transform = ''; return; }
       var dist = Math.max(0, track.scrollWidth - window.innerWidth);
       h.style.height = (window.innerHeight + dist) + 'px';
     });
@@ -164,6 +167,7 @@
     }
 
     hscrolls.forEach(function (h) {
+      if (isMobile()) return;
       var track = h.querySelector('.hscroll-track');
       var total = h.offsetHeight - vh;
       if (total <= 0) return;
@@ -223,7 +227,7 @@
     requestAnimationFrame(step);
   }
   function maybeSnap() {
-    if (snapping || !allowMotion) return;
+    if (snapping || !allowMotion || isMobile()) return;
     var vh = window.innerHeight, y = window.scrollY;
     var best = null, bestDist = Infinity;
     snapEls.forEach(function (el) {
