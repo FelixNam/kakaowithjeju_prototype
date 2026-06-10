@@ -69,7 +69,7 @@
   .chapter.light .panel p strong,
   .chapter.sea .panel p strong { color: #fff; }
   .panel .panel-tag,
-  .chapter.sea .panel .panel-tag { color: var(--yellow); }
+  .chapter.sea .panel .panel-tag { color: var(--yellow); font-size: 20px; }
   .panel .panel-tag em { color: rgba(255,255,255,0.72); }
   .media-caption { left: 16px; top: 16px; bottom: auto; font-size: 12px; padding: 6px 12px; z-index: 3; }
   /* Q2 지도: 인트로 여백 축소 + SVG 폭 조정 */

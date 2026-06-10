@@ -221,10 +221,10 @@ h2 { font-size: clamp(40px, 4.2vw, 64px); font-weight: 800; margin: 18px 0 0 0; 
 }
 .panel p { color: var(--ink-soft); max-width: 52ch; }
 .panel .panel-tag {
-  font-size: 16px; font-weight: 800; letter-spacing: 0.18em;
+  font-size: 24px; font-weight: 800; letter-spacing: -0.01em;
   color: var(--brown); margin-bottom: 18px;
 }
-.panel .panel-tag em { font-style: normal; color: var(--ink-soft); font-weight: 600; letter-spacing: 0.05em; }
+.panel .panel-tag em { font-style: normal; font-size: 16px; color: var(--ink-soft); font-weight: 600; letter-spacing: 0.05em; }
 .chapter.sea .panel p { color: rgba(234, 242, 244, 0.8); }
 .chapter.sea .panel p strong, .chapter.sea .bodycol p strong, .chapter.sea .twocol p strong { color: #fff; }
 .chapter.sea .panel .panel-tag { color: var(--yellow); }
