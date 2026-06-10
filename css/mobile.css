@@ -90,12 +90,14 @@
   }
   .hscroll-hint { display: none; }
   .hscroll-track {
-    flex-direction: column; gap: 28px; padding: 0 20px;
+    flex-direction: column; gap: 36px; padding: 0 20px 72px;
     transform: none !important;
   }
   .hscroll-track figure { width: 100%; flex: initial; }
   .hscroll-track image-slot { width: 100%; max-width: none; height: 62vw; }
-  .hscroll-track figcaption { margin-top: 12px; font-size: 14px; }
+  /* 캡션: 좁은 폭에서 배지("기록 0N")가 두 줄로 꺾이지 않도록 세로 배치 */
+  .hscroll-track figcaption { margin-top: 12px; font-size: 14px; display: block; }
+  .hscroll-track figcaption b { display: block; margin-bottom: 5px; }
 
   /* ---------- 기록(통계) 3단 → 1단 ---------- */
   .chapter.stats-chapter { padding-bottom: 100px; }

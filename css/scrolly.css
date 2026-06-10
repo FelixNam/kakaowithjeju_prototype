@@ -13,7 +13,7 @@
   --sea-deep: color-mix(in oklab, var(--sea) 30%, #0B161B);
   --sea-mist: color-mix(in oklab, var(--sea) 14%, var(--paper));
   --foam: #EAF2F4;
-  --body-size: 14px;
+  --body-size: 16px;
   --maxw: 1240px;
   --textw: 640px;
 }
