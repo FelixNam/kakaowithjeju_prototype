@@ -92,10 +92,3 @@ h1, h2, h3, .kicker, .ch-num, .ch-q b, .gate-title,
 /* 게이트 직후 본문 여백 보정 */
 .title-gate + .chapter { padding-top: 0; }
 .title-gate + .chapter.flow { padding-top: 130px; }
-
-/* ---------- 스크롤 스냅: 주요 텍스트마다 ---------- */
-/* 스티키 교차 섹션의 각 질문 패널 — 화면 중앙에 정렬 */
-.panel { }
-.bigquote { }
-.stats-chapter { }
-/* ↑ 스크롤 스냅은 js/scrolly.js의 느린 커스텀 스냅에서 처리 */
