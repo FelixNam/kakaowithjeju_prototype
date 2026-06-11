@@ -20,6 +20,8 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+/* 위로 스크롤 시 크롬 스크롤 앵커링이 스티키 겹침 레이아웃과 충돌해 점프하는 것 방지 */
+html, body { overflow-anchor: none; }
 /* 우측 내비 분기점([data-chapter] 섹션 시작)에서 스냅 */
 [data-chapter] { scroll-margin-top: 0; }
 body {
@@ -39,6 +41,8 @@ p { margin: 0 0 1.4em 0; text-wrap: pretty; }
 a { color: inherit; }
 img { display: block; }
 image-slot { display: block; }
+/* 슬롯 내부 img의 touch-action:none 무력화 — 사진에서 시작한 터치도 페이지 세로 스크롤로 이어지게 */
+image-slot::part(image) { touch-action: pan-y pinch-zoom; }
 
 .container { max-width: var(--maxw); margin: 0 auto; padding: 0 56px; }
 
