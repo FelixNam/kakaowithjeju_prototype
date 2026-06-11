@@ -12,6 +12,11 @@
 
   h2 { font-size: clamp(30px, 8vw, 40px); }
   .ch-q { font-size: 18px; gap: 10px; margin-top: 20px; }
+  /* 내용 페이지의 Q 배지(제목 게이트 제외): 질문 텍스트 바로 윗줄로 분리 */
+  .chapter .ch-q,
+  .twocol h3 { display: block; }
+  .chapter .ch-q b,
+  .twocol h3 b { display: block; width: fit-content; margin-bottom: 10px; transform: none; }
 
   /* ---------- 히어로 ---------- */
   /* height:auto + min-height 로 두어 제목이 길어져도 위로 잘리지 않게 */

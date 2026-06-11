@@ -19,7 +19,8 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+/* scroll-behavior:smooth 제거 — 모바일 사파리/크롬이 사용자 스크롤 정착에 개입해
+   점프를 유발할 수 있음. 네비 클릭은 JS의 behavior:'smooth' 옵션으로 충분 */
 /* 위로 스크롤 시 크롬 스크롤 앵커링이 스티키 겹침 레이아웃과 충돌해 점프하는 것 방지 */
 html, body { overflow-anchor: none; }
 /* 우측 내비 분기점([data-chapter] 섹션 시작)에서 스냅 */
@@ -32,7 +33,10 @@ body {
   font-size: var(--body-size);
   line-height: 1.85;
   -webkit-font-smoothing: antialiased;
+  /* hidden은 iOS에서 body를 스크롤 컨테이너로 승격시켜 방향 전환 시 점프를
+     유발할 수 있음 — 스크롤 컨테이너를 만들지 않는 clip을 우선 적용(구형 폴백 hidden) */
   overflow-x: hidden;
+  overflow-x: clip;
   text-align: left;
   word-break: keep-all;
   overflow-wrap: break-word;
